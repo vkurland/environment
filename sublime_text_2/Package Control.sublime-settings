@@ -1,0 +1,17 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"BracketHighlighter",
+		"Djaneiro",
+		"Git",
+		"Open-Include",
+		"Package Control",
+		"Python PEP8 Autoformat",
+		"Python Pep8 Lint",
+		"SetDjangoSyntax",
+		"Shell Turtlestein",
+		"Theme - Soda",
+		"Unittest (python)"
+	]
+}

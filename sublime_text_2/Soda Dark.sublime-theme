@@ -1,0 +1,21 @@
+[
+    {
+        "class": "tab_label",
+        "fade": true,
+        "fg": [130, 130, 130],
+        "shadow_color": [25, 25, 25],
+        "shadow_offset": [0, -1]
+    },
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control", "attributes": ["selected"]}],
+        "fg": [255, 255, 255],
+        "shadow_color": [135, 135, 135]
+    },
+	{
+	    "class": "tab_label",
+	    "settings": ["highlight_modified_tabs"],
+	    "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
+	    "fg": [255, 200, 90]
+	} 
+]
