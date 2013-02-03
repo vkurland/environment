@@ -3,8 +3,10 @@
 	"installed_packages":
 	[
 		"BracketHighlighter",
+		"Case Conversion",
 		"Djaneiro",
 		"Git",
+		"GitGutter",
 		"Open-Include",
 		"Package Control",
 		"Python PEP8 Autoformat",
