@@ -3,8 +3,10 @@
 	"installed_packages":
 	[
 		"BracketHighlighter",
+		"Case Conversion",
 		"Djaneiro",
 		"Git",
+		"GitGutter",
 		"GotoOpenFile",
 		"Open-Include",
 		"Package Control",

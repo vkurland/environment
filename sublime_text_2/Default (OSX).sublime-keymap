@@ -1,2 +1,9 @@
 [
+	{ "keys": ["ctrl+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false} },
+	{ "keys": ["ctrl+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true} },
+	{ "keys": ["shift+ctrl+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false, "extend": true}},
+	{ "keys": ["shift+ctrl+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true, "extend": true}},
+	{ "keys": ["ctrl+w"], "command": "delete_word", "args": { "forward": false, "sub_words": true } },
+	{ "keys": ["home"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+	{ "keys": ["end"], "command": "move_to", "args": {"to": "eol", "extend": false} }
 ]
