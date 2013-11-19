@@ -49,6 +49,10 @@ test "$SHLVL" = "1" && {
 	    PATH=/Developer/usr/bin/:${PATH}
 	}
 
+	[ -x /usr/local/apache-maven/apache-maven-3.1.1/bin/ ] && {
+	    PATH=/usr/local/apache-maven/apache-maven-3.1.1/bin/:${PATH}
+	}
+
 	[ -x /Users/vadim/Desktop/Postgres.app/Contents/MacOS/bin/ ] && {
 	    PATH=/Users/vadim/Desktop/Postgres.app/Contents/MacOS/bin/:${PATH}
 	}
