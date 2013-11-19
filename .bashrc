@@ -23,7 +23,7 @@ alias set_tmp_path='PATH=$HOME/tmp/usr/bin:${PATH}; echo $PATH'
 # echo "=== PS1=$PS1"
 # echo "=== PATH=$PATH"
 
-test "$SHLVL" = "1" && {
+echo $PATH | grep -q .rbenv || {
 
 	[ -x $HOME/bin ] && {
 	    PATH=$HOME/bin:${PATH}
@@ -59,6 +59,13 @@ test "$SHLVL" = "1" && {
 
 	USER_SITE=$(python -m site --user-site | sed 's!lib/python/site-packages!bin!')
 	PATH=${USER_SITE}:$PATH
+	export PATH
+
+	# Ruby tools
+	export PATH="$HOME/.rbenv/bin:$PATH"
+	eval "$(rbenv init -)"
+	export PATH="$HOME/.gem/ruby/1.9.1/bin:$PATH"
+
 }
 
 TTY=`tty | egrep '/dev/pts|/dev/ttyp|/dev/ttys'`
@@ -120,20 +127,14 @@ EOF
 
 ########## Completion in ssh 
 
-complete -r ssh
+complete -r ssh >/dev/null 2>&1
 _cssh ()
 {
 cur=${COMP_WORDS[COMP_CWORD]};
-COMPREPLY=($(compgen -W "$(cat ${HOME}/.ssh/known_hosts ${HOME}/.ssh/known_vms |awk -F ',' '{print $1}')" -- ${cur##root@}))
+COMPREPLY=($(compgen -W "$(cat ${HOME}/.ssh/known_hosts ${HOME}/.ssh/known_vms |awk -F '[, ]' '{print $1}')" -- ${cur##root@}))
 }
 # complete -P "vadim@" -F _cssh ssh
 complete -F _cssh ssh
 
-########## Ruby stuff
 
-test "$SHLVL" = "1" && {
-	export PATH="$HOME/.rbenv/bin:$PATH"
-	eval "$(rbenv init -)"
-	export PATH="$HOME/.gem/ruby/1.9.1/bin:$PATH"
-}
 
