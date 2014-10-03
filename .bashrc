@@ -7,7 +7,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-export EDITOR=emacs
+export EDITOR=vi
 
 alias l='ls -laF'
 alias k='ls -laF'
@@ -33,6 +33,10 @@ echo $PATH | grep -q .rbenv || {
 	    PATH=/usr/local/bin:${PATH}
 	}
 
+	[ -x /usr/local/sbin ] && {
+	    PATH="/usr/local/sbin:$PATH"
+	}
+
 	[ -x /opt/local/bin ] && {
 	    PATH=/opt/local/bin:${PATH}
 	}
@@ -47,6 +51,10 @@ echo $PATH | grep -q .rbenv || {
 
 	[ -x /Developer/usr/bin/ ] && {
 	    PATH=/Developer/usr/bin/:${PATH}
+	}
+
+	[ -x /usr/local/apache-maven/apache-maven-3.1.1/bin/ ] && {
+	    PATH=/usr/local/apache-maven/apache-maven-3.1.1/bin/:${PATH}
 	}
 
 	[ -x /Users/vadim/Desktop/Postgres.app/Contents/MacOS/bin/ ] && {
@@ -85,7 +93,7 @@ STTY="stty"
  
 #PS1="\u@\h .../\W\$"
 #export PS1='\n[\u@\h \! \w]\n\[\e[32m\]\$ \[\e[0m\]'
-export PS1="\w 🍔  > "
+export PS1="\w > "
 
 export CVS_RSH=ssh
 
@@ -106,8 +114,8 @@ test $system = "Darwin" && {
     test -f $INPUTRC || {
     cat > $INPUTRC << EOF
 # For Apple Terminal and Ctrl-Left, Ctrl-Right:
-"\e[5D": backward-word
-"\e[5C": forward-word
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
 #
 # For iTerm: 
 # Ctrl-Left, Ctrl-Right:
