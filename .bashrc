@@ -10,6 +10,7 @@ fi
 export EDITOR=vi
 
 alias l='ls -laF'
+alias ll='ls -laF'
 alias k='ls -laF'
 alias xs=cd
 alias vf=cd
