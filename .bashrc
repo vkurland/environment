@@ -24,7 +24,7 @@ alias set_tmp_path='PATH=$HOME/tmp/usr/bin:${PATH}; echo $PATH'
 # echo "=== PS1=$PS1"
 # echo "=== PATH=$PATH"
 
-echo $PATH | grep -q .rbenv || {
+echo $PATH | grep -q rbenv || {
 
 	[ -x $HOME/bin ] && {
 	    PATH=$HOME/bin:${PATH}
@@ -66,10 +66,12 @@ echo $PATH | grep -q .rbenv || {
 	PATH=${USER_SITE}:$PATH
 	export PATH
 
-	# Ruby tools
-	export PATH="$HOME/.rbenv/bin:$PATH"
-	eval "$(rbenv init -)"
-	export PATH="$HOME/.gem/ruby/1.9.1/bin:$PATH"
+#	# Rub ytools
+#	export RBENV_ROOT=/usr/local/var/rbenv
+
+#	export PATH="$HOME/.rbenv/bin:$PATH"
+#	eval "$(rbenv init -)"
+#	export PATH="$HOME/.gem/ruby/1.9.1/bin:$PATH"
 
 }
 
@@ -92,9 +94,9 @@ STTY="stty"
     }
 }
  
-#PS1="\u@\h .../\W\$"
-#export PS1='\n[\u@\h \! \w]\n\[\e[32m\]\$ \[\e[0m\]'
-export PS1="\w > "
+export PS1="\u@\h \\w\\$ "
+# export PS1='\n[\u@\h \! \w]\n\[\e[32m\]\$ \[\e[0m\]'
+# export PS1="\w > "
 
 export CVS_RSH=ssh
 
